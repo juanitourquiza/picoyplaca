@@ -3,7 +3,7 @@
 namespace AppBundle\Twig;
 
 
-//Extension que saca el ultimo digito del string
+//Extension que saca el nombre del dia
 class SubStrCountExtension extends \Twig_Extension
 {
 	
