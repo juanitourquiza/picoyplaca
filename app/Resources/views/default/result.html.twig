@@ -1,0 +1,23 @@
+{% if datos.picoyplaca|length < 6 or datos.picoyplaca|length >7  %}
+No es una placa valida
+{%else%}
+Tu placa es: {{datos.picoyplaca}}<br>
+{% set ultimodigito = datos.picoyplaca|last %}
+{% set diasemana = substr_count(datos.DueDate|date("Y-m-d")) %}
+{% set horapp = datos.DueTime|date("H:i:s") %}
+
+{% set horac = compara_hora(datos.DueTime|date("H:i:s"),diasemana,ultimodigito) %}
+
+
+El ultimo digito de tu placa es: {{ultimodigito}}<br>
+La fecha ingresada es: {{datos.DueDate|date("Y-m-d")}} 
+y es un dia: {{diasemana}}<br>
+La hora es: {{horapp}} <br>
+{% endif %}
+
+
+    
+ 
+
+Vehiculo: {{horac}}<br>
+
